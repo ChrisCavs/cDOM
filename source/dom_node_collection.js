@@ -21,6 +21,7 @@ class DomNodeCollection {
   }
   
   append (someEl) {
+    
     if (someEl instanceof DomNodeCollection) {
       
       this.elements.forEach(el => {
@@ -35,7 +36,7 @@ class DomNodeCollection {
         el.innerHTML += someEl.outerHTML
       }) 
       
-    } else if (someEl instanceof String) {
+    } else if (typeof someEl === 'string') {
       
       this.elements.forEach(el => {
         el.innerHTML += someEl
