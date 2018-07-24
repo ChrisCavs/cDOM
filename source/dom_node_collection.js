@@ -141,6 +141,36 @@ class DomNodeCollection {
     })
   }
 
+  css (propName, propVal = null) {
+    if (!propVal) {
+      if (typeof propName === 'string') {
+        return this.elements[0].style[propName]
+      }
+
+      if (typeof propName === 'array') {
+        return propName.map(name => this.elements[0].style[name])
+      }
+
+      if (Object.getPrototypeOf(propName) === proto) {
+        this.elements.forEach(el => {
+          Object.assign(el.style, propName)
+        })
+        return
+      }
+    }
+
+    if (propVal instanceof Function) {
+      this.elements.forEach((el, i) => {
+        el.style[propName] = propVal(i, el.style[propName])
+      })
+      return
+    }
+
+    this.elements.forEach(el => {
+      el.style[propName] = propVal
+    })
+  }
+
   animate (properties, duration = 1000, easing = 'ease', cb = () => {}) {
     this.elements.forEach(el => {
       
