@@ -2,7 +2,7 @@ import DomNodeCollection from './dom_node_collection'
 
 const queue = []
 
-const $l = (arg) => {
+const c$ = (arg) => {
   
   if (typeof arg === 'string') {
     const arr = Array.from(document.querySelectorAll(`${arg}`))
@@ -26,7 +26,7 @@ const $l = (arg) => {
 
 const passthrough = x => x
 
-$l.ajax = ({
+c$.ajax = ({
   // default options
   success = passthrough,
   error = passthrough,
@@ -68,4 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-window.$l = $l
+window.c$ = c$
