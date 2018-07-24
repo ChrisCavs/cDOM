@@ -147,11 +147,11 @@ class DomNodeCollection {
         return this.elements[0].style[propName]
       }
 
-      if (typeof propName === 'array') {
+      if (propName instanceof Array) {
         return propName.map(name => this.elements[0].style[name])
       }
 
-      if (Object.getPrototypeOf(propName) === proto) {
+      if (Object.getPrototypeOf(propName) === Object.prototype) {
         this.elements.forEach(el => {
           Object.assign(el.style, propName)
         })
