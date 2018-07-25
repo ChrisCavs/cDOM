@@ -122,6 +122,8 @@ Returns the selected HTML attribute for the first wrapped element in the `DOMNod
 
 #### `hide`
 
+Hides all wrapped elements in the `DOMNodeCollection` by setting their display property.
+
 #### `css( propName, [propVal] )`
 
 The `css` method will provide different functionality based on the arguements given.
@@ -141,4 +143,61 @@ c$('.test').css({
 ```
 
 * With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
-* with `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
+* With `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
+
+### Event Listeners
+
+```javascript
+// define a handler
+const handler = () => {
+  console.log("Click event fired")
+}
+
+// select the appropriate elements
+const collection = c$('.test')
+
+// add/remove listeners
+collection.on('click', handler)
+collection.off('click')
+```
+
+#### `on( listener, callback )`
+
+Adds event listener to each wrapped element.  List of events are available [here](https://developer.mozilla.org/en-US/docs/Web/Events).
+
+#### `off( listener )`
+
+Removes event listener from each wrapped element.
+
+### c$.ajax
+
+Sends HTTP Request and returns a `Promise` object.  Accepts a `Hash` object as an argument with any of the following attributes:
+  * method (default: 'GET'): HTTP Request method or type
+  * url (default: window.location.href): URL for HTTP Request
+  * success: success callback
+  * error: error callback
+  * data: data object (for 'POST')
+  * contentType (default: 'application/x-www-form-urlencoded; charset=UTF-8'): content type of HTTP Request
+
+```javascript
+// basic GET request
+
+const test = c$.ajax({
+  url: '/api/example',
+  method: 'GET',
+  success: (Data) => {
+    console.log('Example created!');
+  }
+})
+```
+
+Because `c$.ajax` returns a promise, additional callbacks can be chained to the above HTTP request.
+
+```javascript
+...
+
+test.then(
+  success => console.log(`the result was: ${success}`),
+  er => console.log(`we hit an error: ${er}`)
+)
+```
