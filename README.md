@@ -45,7 +45,7 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
 
 [`c$.ajax`](#cajax)
 
-### `c$`
+## `c$`
 The cDOM library uses the global variable c$ as a wrapper for all methods in the cDOM library.  It has 3 uses:
 
 1. c$ is commonly used to select one or multiple elements via CSS selector (ex: `c$('.test')`).  This returns a `DOMNodeCollection` object containing an array of `HTMLElement`s.  This collection has a multitude of instance methods defined on it.
@@ -75,7 +75,7 @@ c$(setup1)
 c$(setup2)
 ```
 
-### DOM Selection
+## DOM Selection
 In addition to the `c$` method, there are methods defined on the `DOMNodeCollection` that will help traverse and select DOM elements.
 
 #### `children`
@@ -87,7 +87,7 @@ Returns a `DOMNodeCollection` containing the parent elements of the wrapped `HTM
 #### `find( selector )`
 Returns a `DOMNodeCollection` containing descendants of all wrapped `HTMLElement`s, filtered by selector.
 
-### DOM Manipulation
+## DOM Manipulation
 
 #### `html( [string] )`
 
@@ -145,7 +145,7 @@ c$('.test').css({
 * With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
 * With `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
 
-### Effects
+## Effects
 
 #### `animate( properties, [duration, easing, callback] )`
 
@@ -165,7 +165,7 @@ Fades the wrapped elements in.
 
 Fades the wrapped elements out.
 
-### Event Listeners
+## Event Listeners
 
 ```javascript
 // define a handler
@@ -189,7 +189,7 @@ Adds event listener to each wrapped element.  List of events are available [here
 
 Removes event listener from each wrapped element.
 
-### c$.ajax
+## c$.ajax
 
 Sends HTTP Request and returns a `Promise` object.  Accepts a `Hash` object as an argument with any of the following attributes:
   * method (default: 'GET'): HTTP Request method or type
