@@ -45,7 +45,7 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
 
 [`c$.ajax`](#cajax)
 
-### c$
+### `c$`
 The cDOM library uses the global variable c$ as a wrapper for all methods in the cDOM library.  It has 3 uses:
 
 1. c$ is commonly used to select one or multiple elements via CSS selector (ex: `c$('.test')`).  This returns a `DOMNodeCollection` object containing an array of `HTMLElement`s.  This collection has a multitude of instance methods defined on it.
@@ -74,3 +74,18 @@ const setup2 = () => {
 c$(setup1)
 c$(setup2)
 ```
+
+## DOM Selection
+In addition to the `c$` method, there are methods defined on the `DOMNodeCollection` that will help traverse and select DOM elements.
+
+### `children`
+Returns a `DOMNodeCollection` containing all of the children elements of the wrapped `HTMLElement`/s.  Note that this only includes *direct* children.
+
+### `parent`
+Returns a `DOMNodeCollection` containing the parent elements of the wrapped `HTMLElement`/s.
+
+### `find( selector )`
+Returns a `DOMNodeCollection` containing descendants of all wrapped `HTMLElement`s, filtered by selector.
+
+## DOM Manipulation
+
