@@ -91,8 +91,8 @@ Returns a `DOMNodeCollection` containing descendants of all wrapped `HTMLElement
 
 #### `html( [string] )`
 
-With arguement: modifies the `innerHTML` of each element wrapped in the `DOMNodeCollection`.
-Without arguement: returns the `innerHTML` of the first element wrapped in the collection.
+* With arguement: modifies the `innerHTML` of each element wrapped in the `DOMNodeCollection`.
+* Without arguement: returns the `innerHTML` of the first element wrapped in the collection.
 
 #### `empty`
 
@@ -112,13 +112,13 @@ Returns the selected HTML attribute for the first wrapped element in the `DOMNod
 
 #### `addClass( string/array )`
 
-With `string`: adds the class to all wrapped elements in the `DOMNodeCollection`.
-with `array`: adds all classes in the array to all wrapped elements.
+* With `string`: adds the class to all wrapped elements in the `DOMNodeCollection`.
+* with `array`: adds all classes in the array to all wrapped elements.
 
 #### `removeClass( string/array )`
 
-With `string`: removes the class from all wrapped elements in the `DOMNodeCollection`.
-with `array`: removes all classes in the array from all wrapped elements.
+* With `string`: removes the class from all wrapped elements in the `DOMNodeCollection`.
+* With `array`: removes all classes in the array from all wrapped elements.
 
 #### `hide`
 
@@ -126,9 +126,9 @@ with `array`: removes all classes in the array from all wrapped elements.
 
 The `css` method will provide different functionality based on the arguements given.
 
-With `propName` as `string`: returns the value of the specified css property on the first wrapped element.
-With `propName` as `array`: returns the values of the specified css properties on the first wrapped element.
-With `propName` as `object`: sets the specified css properties for each wrapped element.
+* With `propName` as `string`: returns the value of the specified css property on the first wrapped element.
+* With `propName` as `array`: returns the values of the specified css properties on the first wrapped element.
+* With `propName` as `object`: sets the specified css properties for each wrapped element.
 
 ```javascript
 // will apply all css properties specified in the POJO
@@ -140,5 +140,5 @@ c$('.test').css({
 })
 ```
 
-With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
-with `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
+* With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
+* with `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
