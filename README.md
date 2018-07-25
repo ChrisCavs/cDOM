@@ -145,6 +145,26 @@ c$('.test').css({
 * With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
 * With `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
 
+### Effects
+
+#### `animate( properties, [duration, easing, callback] )`
+
+Perform an animation on the wrapped elements.
+
+Animate will accept the following arguements:
+* Properties object, with key-value pairs pointing towards css properties.
+* Duration, given in milliseconds, in which the animation will take place.
+* Easing function, given as a string (ex: `ease-in`, `easeOutElastic`)
+* Callback
+
+#### `fadein( [duration, callback] )`
+
+Fades the wrapped elements in.
+
+#### `fadeout( [duration, callback] )`
+
+Fades the wrapped elements out.
+
 ### Event Listeners
 
 ```javascript
