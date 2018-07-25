@@ -16,7 +16,12 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
 
 ## API
 
-[`c$`](#c)   
+[`c$`](#c)
+
+[DOM Selection](#dom-selection)
+  * [`children`](#children)
+  * [`parent`](#parent)
+  * [`find`](#find)
 
 [DOM Manipulation](#dom-manipulation)  
   * [`html`](#html)  
@@ -26,6 +31,7 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
   * [`attr`](#attr)  
   * [`addClass`](#addclass)  
   * [`removeClass`](#removeclass)
+  * [`hide`](#hide)
   * [`css`](#css)
 
 [Effects](#effects)
@@ -37,4 +43,34 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
   * [`on`](#on)  
   * [`off`](#off)  
 
-[`c$.ajax`](#cajax) 
+[`c$.ajax`](#cajax)
+
+### c$
+The cDOM library uses the global variable c$ as a wrapper for all methods in the cDOM library.  It has 3 uses:
+
+1. c$ is commonly used to select one or multiple elements via CSS selector (ex: `c$('.test')`).  This returns a `DOMNodeCollection` object containing an array of `HTMLElement`s.  This collection has a multitude of instance methods defined on it.
+
+2. c$ can take unwrapped `HTMLElement`s and wrap them into a `DOMNodeCollection`.
+
+3. c$ can also queue functions to run once the DOM content of the page has fully loaded.  An example:
+
+```javascript
+// will only run once DOM Content is loaded
+
+c$(() => {
+  console.log('DOM Content Loaded')
+})
+
+// can also queue functions to run once loaded
+
+const setup1 = () => {
+  console.log('start 1')
+}
+
+const setup2 = () => {
+  console.log('start 2')
+}
+
+c$(setup1)
+c$(setup2)
+```
