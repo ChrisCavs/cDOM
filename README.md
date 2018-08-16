@@ -48,7 +48,7 @@ cDOM is available via CDN, courtesy of StackPath.  Simply add the following scri
 ## `c$`
 The cDOM library uses the global variable c$ as a wrapper for all methods in the cDOM library.  It has 3 uses:
 
-1. c$ is commonly used to select one or multiple elements via CSS selector (ex: `c$('.test')`).  This returns a `DOMNodeCollection` object containing an array of `HTMLElement`s.  This collection has a multitude of instance methods defined on it.
+1. c$ is commonly used to select one or multiple elements via CSS selectors (ex: `c$('.test')`).  This returns a `DOMNodeCollection` object containing an array of `HTMLElement`s.  This collection has a multitude of instance methods defined on it.
 
 2. c$ can take unwrapped `HTMLElement`s and wrap them into a `DOMNodeCollection`.
 
@@ -91,8 +91,8 @@ Returns a `DOMNodeCollection` containing descendants of all wrapped `HTMLElement
 
 #### `html( [string] )`
 
-* With arguement: modifies the `innerHTML` of each element wrapped in the `DOMNodeCollection`.
-* Without arguement: returns the `innerHTML` of the first element wrapped in the collection.
+* With argument: modifies the `innerHTML` of each element wrapped in the `DOMNodeCollection`.
+* Without argument: returns the `innerHTML` of the first element wrapped in the collection.
 
 #### `empty`
 
@@ -104,7 +104,7 @@ Takes a single `HTMLElement`, `DOMNodeCollection`, or `string` argument and appe
 
 #### `remove( selector )`
 
-Removes `HTMLElements` that are decendents of wrapped elements, filtered by selector.
+Removes `HTMLElements` that are descendants of wrapped elements, filtered by selector.
 
 #### `attr( attribute )`
 
@@ -126,7 +126,7 @@ Hides all wrapped elements in the `DOMNodeCollection` by setting their display p
 
 #### `css( propName, [propVal] )`
 
-The `css` method will provide different functionality based on the arguements given.
+The `css` method will provide different functionality based on the arguments given.
 
 * With `propName` as `string`: returns the value of the specified css property on the first wrapped element.
 * With `propName` as `array`: returns the values of the specified css properties on the first wrapped element.
@@ -143,7 +143,7 @@ c$('.test').css({
 ```
 
 * With `propName` as `string` and `propVal` as `string`: will set the specified css property to the specified value for each wrapped element.
-* With `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguements: the index of the wrapped element, and the current css property value.
+* With `propName` as `string` and `propVal` as `function`: will set the specified css property to the return value of the provided function.  The function receives 2 arguments: the index of the wrapped element, and the current css property value.
 
 ## Effects
 
@@ -151,7 +151,7 @@ c$('.test').css({
 
 Perform an animation on the wrapped elements.
 
-Animate will accept the following arguements:
+Animate will accept the following arguments:
 * Properties object, with key-value pairs pointing towards css properties.
 * Duration, given in milliseconds, in which the animation will take place.
 * Easing function, given as a string (ex: `ease-in`, `easeOutElastic`)
@@ -191,7 +191,7 @@ Removes event listener from each wrapped element.
 
 ## c$.ajax
 
-Sends HTTP Request and returns a `Promise` object.  Accepts a `Hash` object as an argument with any of the following attributes:
+Sends HTTP Request and returns a `Promise` object.  Accepts an object as an argument with any of the following attributes:
   * method (default: 'GET'): HTTP Request method or type
   * url (default: window.location.href): URL for HTTP Request
   * success: success callback
